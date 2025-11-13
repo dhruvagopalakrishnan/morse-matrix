@@ -1,9 +1,7 @@
 # morse-matrix
-A hackathon project that builds a wireless optical data link using an Arduino LED transmitter and a Python + OpenCV webcam receiver. The Arduino converts text into Morse code blinks, and the Python app detects LED brightness in real time, decodes DOTs/DASHes, and reconstructs the original message.
+A hackathon-built optical communication system implementing a full software–hardware signal pipeline using mobile-side Morse generation, microcontroller-driven optical emission, and computer-vision-based decoding. The workflow begins on an Android device, where text is converted into standardized Morse timing sequences and transmitted to an Arduino over USB OTG serial. The Arduino operates purely as a deterministic signal generator, producing precise LED pulse trains with strict DOT/DASH and inter-element timing guarantees to ensure temporal coherence for downstream vision processing. 
 
-Features include:
-Arduino Morse transmitter (A–Z, 0–9)
-Real-time Python decoder with OpenCV
-Adaptive brightness auto-calibration for varying lighting
-Timing-based Morse detection with a clean, modular workflow
-This repo contains the Arduino code, Python receiver, and supporting files from our completed hackathon build.
+A laptop webcam captures the optical signal, and a Python/OpenCV processing stack extracts per-frame luminance values from a defined ROI to perform high-frequency LED state sampling. The decoder uses adaptive threshold estimation, rolling brightness baselines, and duration quantization to classify pulses and reconstruct symbol boundaries, letter boundaries, and word boundaries. 
+
+A Tkinter-based GUI provides real-time visualization of the camera feed, LED-state transitions, measured pulse durations, classification decisions, and the incrementally reconstructed text. The system demonstrates a complete end-to-end optical data link spanning mobile preprocessing, microcontroller timing control, optical modulation, video-based sampling, adaptive signal extraction, and deterministic Morse decoding under variable lighting conditions.
+
