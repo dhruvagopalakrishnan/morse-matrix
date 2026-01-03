@@ -3,5 +3,5 @@ A hackathon-built optical communication system implementing a full software–ha
 
 A laptop webcam captures the optical signal, and a Python/OpenCV processing stack extracts per-frame luminance values from a defined ROI to perform high-frequency LED state sampling. The decoder uses adaptive threshold estimation, rolling brightness baselines, and duration quantization to classify pulses and reconstruct symbol boundaries, letter boundaries, and word boundaries. 
 
-A Tkinter-based GUI provides real-time visualization of the camera feed, LED-state transitions, measured pulse durations, classification decisions, and the incrementally reconstructed text. The system demonstrates a complete end-to-end optical data link spanning mobile preprocessing, microcontroller timing control, optical modulation, video-based sampling, adaptive signal extraction, and deterministic Morse decoding under variable lighting conditions.
+A GUI provides real-time visualization of the camera feed, LED-state transitions, measured pulse durations, classification decisions, and the incrementally reconstructed text. The system demonstrates a complete end-to-end optical data link spanning mobile preprocessing, microcontroller timing control, optical modulation, video-based sampling, adaptive signal extraction, and deterministic Morse decoding under variable lighting conditions.
 
